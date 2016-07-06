@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E74932D81D2CC367009AF9B0 /* Funnel.png in Resources */ = {isa = PBXBuildFile; fileRef = E74932D71D2CC367009AF9B0 /* Funnel.png */; };
+		E71580311D2D7EE600F4ECBE /* Combined Shape.png in Resources */ = {isa = PBXBuildFile; fileRef = E71580301D2D7EE600F4ECBE /* Combined Shape.png */; };
+		E71580361D2D860D00F4ECBE /* Blue Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = E71580321D2D860D00F4ECBE /* Blue Ball.png */; };
+		E71580371D2D860D00F4ECBE /* Green Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = E71580331D2D860D00F4ECBE /* Green Ball.png */; };
+		E71580391D2D860D00F4ECBE /* Red Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = E71580351D2D860D00F4ECBE /* Red Ball.png */; };
+		E715803B1D2D863A00F4ECBE /* Yellow Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = E715803A1D2D863A00F4ECBE /* Yellow Ball.png */; };
+		E715803D1D2DA5AE00F4ECBE /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E715803C1D2DA5AE00F4ECBE /* PhysicsCategory.swift */; };
+		E715803F1D2DAE2800F4ECBE /* Windmill Thing.png in Resources */ = {isa = PBXBuildFile; fileRef = E715803E1D2DAE2800F4ECBE /* Windmill Thing.png */; };
 		E75569121D2C798E0015D157 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75569111D2C798E0015D157 /* AppDelegate.swift */; };
 		E75569141D2C798E0015D157 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E75569131D2C798E0015D157 /* GameScene.sks */; };
 		E75569161D2C798E0015D157 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75569151D2C798E0015D157 /* GameScene.swift */; };
@@ -18,14 +24,8 @@
 		E755692B1D2C798E0015D157 /* BallzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E755692A1D2C798E0015D157 /* BallzTests.swift */; };
 		E75569361D2C798E0015D157 /* BallzUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75569351D2C798E0015D157 /* BallzUITests.swift */; };
 		E755694A1D2C7BC30015D157 /* Black Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = E75569431D2C7BC30015D157 /* Black Ball.png */; };
-		E755694B1D2C7BC30015D157 /* Blue Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = E75569441D2C7BC30015D157 /* Blue Ball.png */; };
-		E755694C1D2C7BC30015D157 /* Green Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = E75569451D2C7BC30015D157 /* Green Ball.png */; };
 		E755694D1D2C7BC30015D157 /* Rainbow Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = E75569461D2C7BC30015D157 /* Rainbow Ball.png */; };
-		E755694E1D2C7BC30015D157 /* Red Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = E75569471D2C7BC30015D157 /* Red Ball.png */; };
-		E755694F1D2C7BC30015D157 /* Windmill Thing.png in Resources */ = {isa = PBXBuildFile; fileRef = E75569481D2C7BC30015D157 /* Windmill Thing.png */; };
-		E75569501D2C7BC30015D157 /* Yellow Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = E75569491D2C7BC30015D157 /* Yellow Ball.png */; };
 		E75569541D2C7E2F0015D157 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75569531D2C7E2F0015D157 /* Ball.swift */; };
-		E75569581D2C94060015D157 /* Funnel Cap.png in Resources */ = {isa = PBXBuildFile; fileRef = E75569561D2C94060015D157 /* Funnel Cap.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E74932D71D2CC367009AF9B0 /* Funnel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Funnel.png; sourceTree = "<group>"; };
+		E71580301D2D7EE600F4ECBE /* Combined Shape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Combined Shape.png"; sourceTree = "<group>"; };
+		E71580321D2D860D00F4ECBE /* Blue Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blue Ball.png"; sourceTree = "<group>"; };
+		E71580331D2D860D00F4ECBE /* Green Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Ball.png"; sourceTree = "<group>"; };
+		E71580351D2D860D00F4ECBE /* Red Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Ball.png"; sourceTree = "<group>"; };
+		E715803A1D2D863A00F4ECBE /* Yellow Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Yellow Ball.png"; sourceTree = "<group>"; };
+		E715803C1D2DA5AE00F4ECBE /* PhysicsCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
+		E715803E1D2DAE2800F4ECBE /* Windmill Thing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Windmill Thing.png"; sourceTree = "<group>"; };
 		E755690E1D2C798E0015D157 /* Ballz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ballz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75569111D2C798E0015D157 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E75569131D2C798E0015D157 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -63,14 +69,8 @@
 		E75569351D2C798E0015D157 /* BallzUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallzUITests.swift; sourceTree = "<group>"; };
 		E75569371D2C798E0015D157 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E75569431D2C7BC30015D157 /* Black Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Black Ball.png"; sourceTree = "<group>"; };
-		E75569441D2C7BC30015D157 /* Blue Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blue Ball.png"; sourceTree = "<group>"; };
-		E75569451D2C7BC30015D157 /* Green Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Ball.png"; sourceTree = "<group>"; };
 		E75569461D2C7BC30015D157 /* Rainbow Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rainbow Ball.png"; sourceTree = "<group>"; };
-		E75569471D2C7BC30015D157 /* Red Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Red Ball.png"; sourceTree = "<group>"; };
-		E75569481D2C7BC30015D157 /* Windmill Thing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Windmill Thing.png"; sourceTree = "<group>"; };
-		E75569491D2C7BC30015D157 /* Yellow Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Yellow Ball.png"; sourceTree = "<group>"; };
 		E75569531D2C7E2F0015D157 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
-		E75569561D2C94060015D157 /* Funnel Cap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Funnel Cap.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +124,7 @@
 				E75569111D2C798E0015D157 /* AppDelegate.swift */,
 				E75569131D2C798E0015D157 /* GameScene.sks */,
 				E75569151D2C798E0015D157 /* GameScene.swift */,
+				E715803C1D2DA5AE00F4ECBE /* PhysicsCategory.swift */,
 				E75569531D2C7E2F0015D157 /* Ball.swift */,
 				E75569171D2C798E0015D157 /* GameViewController.swift */,
 				E75569191D2C798E0015D157 /* Main.storyboard */,
@@ -131,14 +132,13 @@
 				E755691E1D2C798E0015D157 /* LaunchScreen.storyboard */,
 				E75569211D2C798E0015D157 /* Info.plist */,
 				E75569431D2C7BC30015D157 /* Black Ball.png */,
-				E75569441D2C7BC30015D157 /* Blue Ball.png */,
-				E75569451D2C7BC30015D157 /* Green Ball.png */,
 				E75569461D2C7BC30015D157 /* Rainbow Ball.png */,
-				E75569471D2C7BC30015D157 /* Red Ball.png */,
-				E75569481D2C7BC30015D157 /* Windmill Thing.png */,
-				E75569561D2C94060015D157 /* Funnel Cap.png */,
-				E74932D71D2CC367009AF9B0 /* Funnel.png */,
-				E75569491D2C7BC30015D157 /* Yellow Ball.png */,
+				E71580301D2D7EE600F4ECBE /* Combined Shape.png */,
+				E715803E1D2DAE2800F4ECBE /* Windmill Thing.png */,
+				E71580321D2D860D00F4ECBE /* Blue Ball.png */,
+				E715803A1D2D863A00F4ECBE /* Yellow Ball.png */,
+				E71580331D2D860D00F4ECBE /* Green Ball.png */,
+				E71580351D2D860D00F4ECBE /* Red Ball.png */,
 			);
 			path = Ballz;
 			sourceTree = "<group>";
@@ -266,18 +266,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E755694D1D2C7BC30015D157 /* Rainbow Ball.png in Resources */,
-				E75569501D2C7BC30015D157 /* Yellow Ball.png in Resources */,
 				E75569141D2C798E0015D157 /* GameScene.sks in Resources */,
-				E755694B1D2C7BC30015D157 /* Blue Ball.png in Resources */,
-				E755694C1D2C7BC30015D157 /* Green Ball.png in Resources */,
 				E75569201D2C798E0015D157 /* LaunchScreen.storyboard in Resources */,
-				E75569581D2C94060015D157 /* Funnel Cap.png in Resources */,
+				E71580371D2D860D00F4ECBE /* Green Ball.png in Resources */,
 				E755691D1D2C798E0015D157 /* Assets.xcassets in Resources */,
-				E755694E1D2C7BC30015D157 /* Red Ball.png in Resources */,
+				E715803B1D2D863A00F4ECBE /* Yellow Ball.png in Resources */,
+				E71580311D2D7EE600F4ECBE /* Combined Shape.png in Resources */,
+				E715803F1D2DAE2800F4ECBE /* Windmill Thing.png in Resources */,
 				E755694A1D2C7BC30015D157 /* Black Ball.png in Resources */,
 				E755691B1D2C798E0015D157 /* Main.storyboard in Resources */,
-				E74932D81D2CC367009AF9B0 /* Funnel.png in Resources */,
-				E755694F1D2C7BC30015D157 /* Windmill Thing.png in Resources */,
+				E71580391D2D860D00F4ECBE /* Red Ball.png in Resources */,
+				E71580361D2D860D00F4ECBE /* Blue Ball.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +303,7 @@
 			files = (
 				E75569541D2C7E2F0015D157 /* Ball.swift in Sources */,
 				E75569161D2C798E0015D157 /* GameScene.swift in Sources */,
+				E715803D1D2DA5AE00F4ECBE /* PhysicsCategory.swift in Sources */,
 				E75569181D2C798E0015D157 /* GameViewController.swift in Sources */,
 				E75569121D2C798E0015D157 /* AppDelegate.swift in Sources */,
 			);

@@ -8,7 +8,8 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
+    var funnel: SKShapeNode! = nil
     var windmill: SKSpriteNode!
     /* Used to create other Ball objects by the .copy() method */
     var genericBall: Ball!
@@ -23,16 +24,17 @@ class GameScene: SKScene {
     let BALL_INCREMENT = CGPoint(x: 0, y: 35)
     
     override func didMoveToView(view: SKView) {
+        addFunnel()
         initializeVars()
         ballArray.append(genericBall)
-        addRandomBalls(3)
+        self.physicsWorld.gravity = CGVector(dx: 0, dy: -7.5)
+        addRandomBalls(4)
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let droppedBall = ballArray[0]
-        droppedBall.initializePhysicsBody()
+        droppedBall.physicsBody?.collisionBitMask = PhysicsCategory.Windmill | PhysicsCategory.Ball
         ballArray.removeAtIndex(0)
-        moveBallsDown()
         addRandomBalls(1)
     }
    
@@ -40,10 +42,14 @@ class GameScene: SKScene {
         windmill.zRotation += MILL_ROTATION
     }
     
-    func moveBallsDown() {
-        for ball in ballArray {
-            ball.position.y -= BALL_INCREMENT.y
-        }
+    func didBeginContact(contact: SKPhysicsContact) {
+        print("hi")
+        let bodyA = contact.bodyA
+        let bodyB = contact.bodyB
+        let ANCHOR_POINT = contact.contactPoint
+        let joint = SKPhysicsJointPin.jointWithBodyA(bodyA, bodyB: bodyB, anchor: ANCHOR_POINT)
+        
+        self.physicsWorld.addJoint(joint)
     }
     
     func addRandomBalls(nTimes: Int) {
@@ -52,8 +58,6 @@ class GameScene: SKScene {
             
             newBall.position.y += BALL_INCREMENT.y
             newBall.texture = SKTexture(imageNamed: newBall.randomizeColor().rawValue)
-            newBall.physicsBody?.affectedByGravity = false
-            newBall.physicsBody?.dynamic = false
             
             self.addChild(newBall)
             ballArray.append(newBall)
@@ -63,5 +67,35 @@ class GameScene: SKScene {
     func initializeVars() {
         windmill = self.childNodeWithName("windmill") as! SKSpriteNode
         genericBall = self.childNodeWithName("genericBall") as! Ball
+        
+        windmill.physicsBody?.categoryBitMask = PhysicsCategory.Windmill
+        windmill.physicsBody?.collisionBitMask = PhysicsCategory.Ball
+        windmill.physicsBody?.contactTestBitMask = PhysicsCategory.Ball
+        
+        genericBall.physicsBody?.categoryBitMask = PhysicsCategory.Ball
+        genericBall.physicsBody?.collisionBitMask = PhysicsCategory.Ball | PhysicsCategory.Funnel | PhysicsCategory.Windmill
+        genericBall.physicsBody?.contactTestBitMask = PhysicsCategory.Ball | PhysicsCategory.Windmill
+        
+        funnel.physicsBody?.categoryBitMask = PhysicsCategory.Funnel
+        funnel.physicsBody?.collisionBitMask = PhysicsCategory.Ball
+        funnel.physicsBody?.contactTestBitMask = PhysicsCategory.None
+    }
+    
+    func addFunnel() {
+        let path = UIBezierPath()
+        let startPoint = CGPoint(x: -200, y: 330)
+        path.moveToPoint(startPoint)
+        path.addLineToPoint(CGPoint(x: -20, y: 45))
+        path.addLineToPoint(CGPoint(x: 0, y: -55))
+        path.addLineToPoint(CGPoint(x: 40, y: -55))
+        path.addLineToPoint(CGPoint(x: 60, y: 45))
+        path.addLineToPoint(CGPoint(x: 240, y: 330))
+        
+        funnel = SKShapeNode(path: path.CGPath)
+        funnel.physicsBody = SKPhysicsBody(edgeChainFromPath: path.CGPath)
+        funnel.strokeColor = UIColor.darkGrayColor()
+        funnel.lineWidth = 4
+        funnel.position = CGPoint(x: self.frame.width/2 - 18, y: 587)
+        self.addChild(funnel)
     }
 }
