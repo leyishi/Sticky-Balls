@@ -123,8 +123,8 @@
 			children = (
 				E75569111D2C798E0015D157 /* AppDelegate.swift */,
 				E75569131D2C798E0015D157 /* GameScene.sks */,
-				E75569531D2C7E2F0015D157 /* Ball.swift */,
 				E75569151D2C798E0015D157 /* GameScene.swift */,
+				E75569531D2C7E2F0015D157 /* Ball.swift */,
 				E75569171D2C798E0015D157 /* GameViewController.swift */,
 				E75569191D2C798E0015D157 /* Main.storyboard */,
 				E755691C1D2C798E0015D157 /* Assets.xcassets */,
