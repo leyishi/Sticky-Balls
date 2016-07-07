@@ -6,6 +6,8 @@
 //  Copyright © 2016 Alan Gao. All rights reserved.
 //
 
+// this file was edited pleas merge...
+
 import SpriteKit
 import Darwin  //Random num generator
 
