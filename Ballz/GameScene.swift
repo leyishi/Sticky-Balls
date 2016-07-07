@@ -16,16 +16,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     /* Stores all balls in the gamescene */
     var ballArray: [Ball] = []
     
+    var timer: NSTimer?
+    var timerRunning = false
+    
     /* How fast the mill rotates */
     let MILL_ROTATION = CGFloat(0.02)
     /* The position of the bottom most ball on the funnel */
     let LAST_BALL_POSITION = CGPoint(x: 187.5, y: 550.5)
     /* The distance the next ball will spawn above the one below it*/
     let BALL_INCREMENT = CGPoint(x: 0, y: 35)
-    
-    
-    var i = 1
-    
+    let TIMER_LENGTH = 0.5
+
     override func didMoveToView(view: SKView) {
         /* Set physics world delegate */
         physicsWorld.contactDelegate = self
@@ -38,6 +39,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if(timerRunning) { return }
+        
         let droppedBall = ballArray[0]
         
         /* To drop the ball from funnel, we change the ball's collision bit mask */
@@ -47,10 +50,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         ballArray.removeAtIndex(0)
         addRandomBalls(1)
+        
+        timerRunning = true
+        timer = NSTimer.scheduledTimerWithTimeInterval(TIMER_LENGTH, target: self, selector: (#selector(GameScene.stopTimer)), userInfo: nil, repeats: false)
     }
    
     override func update(currentTime: CFTimeInterval) {
         windmill.zRotation += MILL_ROTATION
+    }
+    
+    func stopTimer() {
+        timer?.invalidate()
+        timerRunning = false
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
