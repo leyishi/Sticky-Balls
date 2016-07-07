@@ -21,9 +21,11 @@ enum Color: String
 
 class Ball: SKSpriteNode {
     
-    func initializePhysicsBody() {
-        let ballTexture = SKTexture(imageNamed: "Blue Ball")
-        self.physicsBody = SKPhysicsBody(texture: ballTexture, size: CGSize(width: 35, height: 35))
+    var isConnected = false
+    
+    func removeCollisions() {
+        self.physicsBody?.collisionBitMask = PhysicsCategory.None
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.None
     }
     
     func randomizeColor() -> Color {
@@ -42,7 +44,6 @@ class Ball: SKSpriteNode {
         else {
             newBallColor = .Yellow
         }
-        
         return newBallColor
     }
     
